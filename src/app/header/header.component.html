@@ -1,0 +1,25 @@
+<header class="bg-blue-500 p-4">
+  <div class="container mx-auto">
+    <div class="flex items-center justify-between">
+      <a class="text-white text-2xl font-semibold" href="/">Weather app</a>
+      <nav class="space-x-4">
+        <a
+          class="text-white"
+          [routerLink]="['/city', 'Zemun']"
+          [class.font-semibold]="(cityService.selectedCity$ | async) === 'Zemun'"
+          (click)="changeCity('Zemun')"
+        >
+          Zemun
+        </a>
+        <a
+          class="text-white"
+          [routerLink]="['/city', 'Berlin']"
+          [class.font-semibold]="(cityService.selectedCity$ | async) === 'Berlin'"
+          (click)="changeCity('Berlin')"
+        >
+          Berlin
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
